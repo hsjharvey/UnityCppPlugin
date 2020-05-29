@@ -1,6 +1,5 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include <string>
-#include "pch.h"
 #include "framework.h"
 #include <array>
 #include <random>
