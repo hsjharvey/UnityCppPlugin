@@ -29,13 +29,13 @@ extern "C"
             std::normal_distribution<float> n_dist(0.0f, 1.0f);
 
             if (strcmp(which_arm, "optimal") == 0) {
-                for (int i = 0; i < length; i++) {
+                for (unsigned int i = 0; i < length; i++) {
                     float n_rd = n_dist(rd_generator_optimal) + mean_adjustment;
                     array[i] = n_rd;
                 }
             }
             else if (strcmp(which_arm, "suboptimal") == 0) {
-                for (int i = 0; i < length; i++) {
+                for (unsigned int i = 0; i < length; i++) {
                     float n_rd = n_dist(rd_generator_suboptimal) + mean_adjustment;
                     array[i] = n_rd;
                 }
@@ -46,13 +46,13 @@ extern "C"
             std::exponential_distribution<float> e_dist(1.0f);
 
             if (strcmp(which_arm, "optimal") == 0) {
-                for (int i = 0; i < length; i++) {
+                for (unsigned int i = 0; i < length; i++) {
                     float e_rd = -e_dist(rd_generator_optimal) + 1.0f + mean_adjustment;
                     array[i] = e_rd;
                 }
             }
             else if (strcmp(which_arm, "suboptimal") == 0) {
-                for (int i = 0; i < length; i++) {
+                for (unsigned int i = 0; i < length; i++) {
                     float e_rd = e_dist(rd_generator_suboptimal) - 1.0f + mean_adjustment;
                     array[i] = e_rd;
                 }
@@ -63,13 +63,13 @@ extern "C"
             std::student_t_distribution<float> t_dist(2.1f);
 
             if (strcmp(which_arm, "optimal") == 0) {
-                for (int i = 0; i < length; i++) {
+                for (unsigned int i = 0; i < length; i++) {
                     float t_rd = t_dist(rd_generator_optimal) + mean_adjustment;
                     array[i] = t_rd;
                 }
             }
             else if (strcmp(which_arm, "suboptimal") == 0) {
-                for (int i = 0; i < length; i++) {
+                for (unsigned int i = 0; i < length; i++) {
                     float t_rd = t_dist(rd_generator_suboptimal) + mean_adjustment;
                     array[i] = t_rd;
                 }
